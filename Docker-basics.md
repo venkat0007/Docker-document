@@ -14,11 +14,11 @@ environment variables
 configuration files
 The image can then be deployed to any Docker environment and executable as a container.
 
-# Container :
+#### Container :
 
 A Docker container is a runtime instance of an image. From one image you can create multiple containers (all running the sample application) on multiple Docker platform.
 
-#### Difference between container and VM ?
+### Difference between container and VM ?
 
 ![image](https://user-images.githubusercontent.com/20027119/103328068-5d342d00-4a7d-11eb-9559-05b7255197da.png)
 
