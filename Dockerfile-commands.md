@@ -10,7 +10,7 @@ Information:
 FROM must be the first non-comment instruction in the Dockerfile.
 FROM can appear multiple times within a single Dockerfile in order to create multiple images. Simply make a note of the last image ID output by the commit before each new FROM command.
 The tag or digest values are optional. If you omit either of them, the builder assumes a latest by default. The builder returns an error if it cannot match the tag value.
-Reference - Best Practices
+
 
 MAINTAINER
 
@@ -32,7 +32,7 @@ Information:
 The exec form makes it possible to avoid shell string munging, and to RUN commands using a base image that does not contain the specified shell executable.
 The default shell for the shell form can be changed using the SHELL command.
 Normal shell processing does not occur when using the exec form. For example, RUN ["echo", "$HOME"] will not do variable substitution on $HOME.
-Reference - Best Practices
+
 
 CMD
 
@@ -48,7 +48,7 @@ There can only be one CMD instruction in a Dockerfile. If you list more than one
 If CMD is used to provide default arguments for the ENTRYPOINT instruction, both the CMD and ENTRYPOINT instructions should be specified with the JSON array format.
 If the user specifies arguments to docker run then they will override the default specified in CMD.
 Normal shell processing does not occur when using the exec form. For example, CMD ["echo", "$HOME"] will not do variable substitution on $HOME.
-Reference - Best Practices
+
 
 LABEL
 
@@ -62,7 +62,7 @@ To include spaces within a LABEL value, use quotes and backslashes as you would 
 Labels are additive including LABELs in FROM images.
 If Docker encounters a label/key that already exists, the new value overrides any previous labels with identical keys.
 To view an image’s labels, use the docker inspect command. They will be under the "Labels" JSON attribute.
-Reference - Best Practices
+
 
 EXPOSE
 
@@ -73,7 +73,7 @@ Information:
 
 Informs Docker that the container listens on the specified network port(s) at runtime.
 EXPOSE does not make the ports of the container accessible to the host.
-Reference - Best Practices
+
 
 ENV
 
@@ -87,7 +87,7 @@ The ENV instruction sets the environment variable <key> to the value <value>.
 The value will be in the environment of all “descendant” Dockerfile commands and can be replaced inline as well.
 The environment variables set using ENV will persist when a container is run from the resulting image.
 The first form will set a single variable to a value with the entire string after the first space being treated as the <value> - including characters such as spaces and quotes.
-Reference - Best Practices
+
 
 ADD
 
@@ -102,7 +102,7 @@ Copies new files, directories, or remote file URLs from <src> and adds them to t
 If <src> is a file or directory, then they must be relative to the source directory that is being built (the context of the build).
 <dest> is an absolute path, or a path relative to WORKDIR.
 If <dest> doesn’t exist, it is created along with all missing directories in its path.
-Reference - Best Practices
+
 
 COPY
 
@@ -117,7 +117,7 @@ Copies new files or directories from <src> and adds them to the filesystem of th
 <src> must be relative to the source directory that is being built (the context of the build).
 <dest> is an absolute path, or a path relative to WORKDIR.
 If <dest> doesn’t exist, it is created along with all missing directories in its path.
-Reference - Best Practices
+
 
 ENTRYPOINT
 
@@ -131,7 +131,7 @@ Allows you to configure a container that will run as an executable.
 Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT and will override all elements specified using CMD.
 The shell form prevents any CMD or run command line arguments from being used, but the ENTRYPOINT will start via the shell. This means the executable will not be PID 1 nor will it receive UNIX signals. Prepend exec to get around this drawback.
 Only the last ENTRYPOINT instruction in the Dockerfile will have an effect.
-Reference - Best Practices
+
 
 VOLUME
 
@@ -141,7 +141,6 @@ VOLUME ["<path>", ...]
 VOLUME <path> [<path> ...]
 Creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
 
-Reference - Best Practices
 
 USER
 
@@ -150,7 +149,7 @@ Usage:
 USER <username | UID>
 The USER instruction sets the user name or UID to use when running the image and for any RUN, CMD and ENTRYPOINT instructions that follow it in the Dockerfile.
 
-Reference - Best Practices
+
 
 WORKDIR
 
@@ -161,7 +160,7 @@ Information:
 
 Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD instructions that follow it.
 It can be used multiple times in the one Dockerfile. If a relative path is provided, it will be relative to the path of the previous WORKDIR instruction.
-Reference - Best Practices
+
 
 ARG
 
@@ -179,7 +178,7 @@ HTTP_PROXY and http_proxy
 HTTPS_PROXY and https_proxy
 FTP_PROXY and ftp_proxy
 NO_PROXY and no_proxy
-Reference
+
 
 ONBUILD
 
@@ -192,7 +191,7 @@ Adds to the image a trigger instruction to be executed at a later time, when the
 Any build instruction can be registered as a trigger.
 Triggers are inherited by the "child" build only. In other words, they are not inherited by "grand-children" builds.
 The ONBUILD instruction may not trigger FROM, MAINTAINER, or ONBUILD instructions.
-Reference - Best Practices
+
 
 STOPSIGNAL
 
@@ -201,7 +200,6 @@ Usage:
 STOPSIGNAL <signal>
 The STOPSIGNAL instruction sets the system call signal that will be sent to the container to exit. This signal can be a valid unsigned number that matches a position in the kernel’s syscall table, for instance 9, or a signal name in the format SIGNAME, for instance SIGKILL.
 
-Reference
 
 HEALTHCHECK
 
@@ -226,7 +224,7 @@ The command's exit status indicates the health status of the container.
 2: reserved - do not use this exit code
 The first 4096 bytes of stdout and stderr from the <command> are stored and can be queried with docker inspect.
 When the health status of a container changes, a health_status event is generated with the new status.
-Reference
+
 
 SHELL
 
@@ -238,4 +236,4 @@ Information:
 Allows the default shell used for the shell form of commands to be overridden.
 Each SHELL instruction overrides all previous SHELL instructions, and affects all subsequent instructions.
 Allows an alternate shell be used such as zsh, csh, tcsh, powershell, and others.
-Reference
+
