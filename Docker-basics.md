@@ -30,7 +30,7 @@ Security Management
 Rapid scaling of Systems 
 Better Software Delivery 
 Software-defined networking
-Has the Ability to Reduce the Size
+Has the Ability to Reduce the Size 
 
 ### Difference between container and VM ?
 
