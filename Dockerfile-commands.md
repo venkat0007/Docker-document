@@ -237,3 +237,4 @@ Allows the default shell used for the shell form of commands to be overridden.
 Each SHELL instruction overrides all previous SHELL instructions, and affects all subsequent instructions.
 Allows an alternate shell be used such as zsh, csh, tcsh, powershell, and others.
 
+https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
