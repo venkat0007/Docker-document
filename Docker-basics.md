@@ -19,18 +19,18 @@ The image can then be deployed to any Docker environment and executable as a con
 A Docker container is a runtime instance of an image. From one image you can create multiple containers (all running the sample application) on multiple Docker platform.
 
 #### Docker features
-Faster and easier configuration
-Portability
-Application isolation
-Increase in productivity
-Swarm 
-Services 
-Routing Mesh 
-Security Management 
-Rapid scaling of Systems 
-Better Software Delivery 
-Software-defined networking
-Has the Ability to Reduce the Size 
+Faster and easier configuration,
+Portability,
+Application isolation,
+Increase in productivity,
+Swarm,
+Services, 
+Routing Mesh, 
+Security Management, 
+Rapid scaling of Systems, 
+Better Software Delivery, 
+Software-defined networking,
+Has the Ability to Reduce the Size.
 
 ### Difference between container and VM ?
 
