@@ -6,6 +6,7 @@ all its dependencies together in the form of a docker container to ensure that y
 
 #### image:
 
+A Docker image consists of read-only layers each of which represents a Dockerfile instruction.
  A Docker image is containing everything needed to run an application as a container. This includes:
 code
 runtime
